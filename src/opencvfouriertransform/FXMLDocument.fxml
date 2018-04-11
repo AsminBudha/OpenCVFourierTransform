@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="opencvfouriertransform.FXMLDocumentController">
+  <children>
+    <BorderPane prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <HBox prefHeight="-1.0" prefWidth="-1.0">
+          <children>
+            <Button mnemonicParsing="false" onAction="#loadImage" text="Load Image" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+              <HBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+              </HBox.margin>
+            </Button>
+            <Button fx:id="transformButton" disable="true" mnemonicParsing="false" onAction="#transformImage" text="Apply Transformation" HBox.margin="$x1" />
+            <Button id="antiTransformImage" fx:id="antiTransformButton" disable="true" mnemonicParsing="false" onAction="#antiTransformImage" text="Apply Anti Transformation" HBox.margin="$x1" />
+          </children>
+        </HBox>
+      </bottom>
+      <left>
+        <ImageView fx:id="originalImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+          <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x2" />
+          </BorderPane.margin>
+        </ImageView>
+      </left>
+      <right>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+          <children>
+            <ImageView fx:id="transformedImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.margin="$x2" />
+            <ImageView fx:id="antiTransformedImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.margin="$x2" />
+          </children>
+        </VBox>
+      </right>
+    </BorderPane>
+  </children>
+</AnchorPane>
